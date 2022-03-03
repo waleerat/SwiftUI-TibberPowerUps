@@ -20,7 +20,7 @@ struct PowerUpDetailView: View {
             VStack {
                 NavigationColor()
                 VStack{
-                    PowerUpListView(powerUpItem: powerUpItem, isListView: false)
+                    PowerUpConditionView(powerUpItem: powerUpItem, isListView: false)
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack(spacing: 20){
                             ButtonActionView(buttonLabel: .constant("Disconnect from Tibber") , isActive: $isConnected, action: {

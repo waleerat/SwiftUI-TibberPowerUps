@@ -24,6 +24,8 @@
 		ABDE0F6927CFC34D007B6C8E /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE0F6827CFC34C007B6C8E /* Modifier.swift */; };
 		ABDE0F6B27CFC7CE007B6C8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE0F6A27CFC7CE007B6C8E /* Constants.swift */; };
 		ABDE0F6D27CFF5D1007B6C8E /* ShareViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE0F6C27CFF5D0007B6C8E /* ShareViews.swift */; };
+		ABDE0F7127D09773007B6C8E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE0F7027D09770007B6C8E /* LoadingView.swift */; };
+		ABDE0F7327D0A097007B6C8E /* FetchErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE0F7227D0A095007B6C8E /* FetchErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		ABDE0F6827CFC34C007B6C8E /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
 		ABDE0F6A27CFC7CE007B6C8E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ABDE0F6C27CFF5D0007B6C8E /* ShareViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViews.swift; sourceTree = "<group>"; };
+		ABDE0F7027D09770007B6C8E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		ABDE0F7227D0A095007B6C8E /* FetchErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				ABDE0F6427CFBFC7007B6C8E /* PowerUpListView.swift */,
 				ABDE0F6627CFBFD7007B6C8E /* PowerUpDetailView.swift */,
 				ABDE0F6C27CFF5D0007B6C8E /* ShareViews.swift */,
+				ABDE0F7027D09770007B6C8E /* LoadingView.swift */,
+				ABDE0F7227D0A095007B6C8E /* FetchErrorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +253,7 @@
 			files = (
 				ABCD4E7E27CF75A600582A22 /* ContentView.swift in Sources */,
 				ABDE0F6B27CFC7CE007B6C8E /* Constants.swift in Sources */,
+				ABDE0F7327D0A097007B6C8E /* FetchErrorView.swift in Sources */,
 				ABDE0F6527CFBFC7007B6C8E /* PowerUpListView.swift in Sources */,
 				ABDE0F6127CFBD84007B6C8E /* DeivceProperties.swift in Sources */,
 				ABCD4E9327CF77DA00582A22 /* PowerUpsVM.swift in Sources */,
@@ -256,6 +263,7 @@
 				ABCD4E9D27CF81DB00582A22 /* PowerUpModel.swift in Sources */,
 				ABCD4E9527CF77E900582A22 /* Network.swift in Sources */,
 				ABCD4E7C27CF75A600582A22 /* TibberPowerUpsApp.swift in Sources */,
+				ABDE0F7127D09773007B6C8E /* LoadingView.swift in Sources */,
 				ABCD4E9727CF7AFF00582A22 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

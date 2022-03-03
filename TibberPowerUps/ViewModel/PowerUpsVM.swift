@@ -10,10 +10,10 @@ import Apollo
 
 class PowerUpsVM: ObservableObject {
     @Published var powerUpsItems: [Response.PowerUpModel] = []
-    @Published var isError: Bool = false
+    @Published var isLoading: Bool = false
+    @Published var isFetchError: Bool = false
+    @Published var fetchErrorDescription: String = ""
     @Published var selectedRow: Response.PowerUpModel?
-    
-   
     
     init() {
         fetch()
@@ -27,11 +27,21 @@ class PowerUpsVM: ObservableObject {
                    for item in items {
                        self.powerUpsItems.append(Response.PowerUpModel(item.resultMap as NSDictionary))
                    }
+                   self.isFetchError = false
+                   self.fetchErrorDescription = ""
+                   
+                   // Delay of 7.5 seconds
+                   DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                       self.isLoading = true
+                   }
+                   
                } else if let errors = graphQLResult.errors {
-                       print("GraphQL errors \(errors)")
+                   self.isFetchError = true
+                   self.fetchErrorDescription = "\(errors)"
                }
             case .failure(let error) :
-                print("Failure! Error : \(error)")
+                self.isFetchError = true
+               self.fetchErrorDescription = "\(error)"
             }
         }
     }
