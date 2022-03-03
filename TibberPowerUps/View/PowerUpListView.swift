@@ -55,10 +55,10 @@ struct PowerUpPreview: View {
             }
             
         }//:HStack
-        .padding(isIpad() ? 20 : 7)
+        .padding(isIpad() ? 20 : 10)
         .background(isListView ? .white : Color.gray.opacity(0))
-        .clipShape(RoundedRectangle(cornerRadius: isListView ? 7: 0))
-        .padding(isListView ? .horizontal : [.top, .bottom])
+        .clipShape(RoundedRectangle(cornerRadius: isListView ? 10: 0))
+        .padding(isListView ? .horizontal : .vertical, 5)
     }//:Body
 }
 

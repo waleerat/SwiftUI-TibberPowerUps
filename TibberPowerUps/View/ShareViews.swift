@@ -18,10 +18,11 @@ struct ButtonActionView: View {
         Button(action: action , label: {
             Text(buttonLabel)
                 .font(.system(size: isIpad() ? 25 : 16 ,weight: .regular, design: .rounded))
+                .padding(.vertical,10)
+                .padding(.horizontal,35)
                 .foregroundColor(isActive ? .white : kTitleColor)
-                .padding()
-                .frame(width: isIpad() ? 350 : 200)
-                .background(isActive ? kTopBarBg : kTitleColor.opacity(0.1))
+                .frame(width: isIpad() ? getScreen().width * 0.4 : getScreen().width * 0.8)
+                .background(isActive ? kTopBarBg : kTopBarBg.opacity(0.1))
                 .cornerRadius(20)
                 .overlay(RoundedRectangle(cornerRadius: 20)
                 .stroke(isActive ? kTopBarBg : kBorderColor, lineWidth: 2))
@@ -31,9 +32,9 @@ struct ButtonActionView: View {
 }
 
 struct BodyColor: View {
+    @State var backgroundColor:Color = Color.gray.opacity(0.1)
     var body: some View {
-        Color.gray
-            .opacity(0.1)
+        backgroundColor
             .ignoresSafeArea()
     }
 }

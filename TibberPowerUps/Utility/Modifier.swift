@@ -18,18 +18,35 @@ struct NavigationPropertiesModifier : ViewModifier {
 }
 
 struct NavigationBarTitleModifier : ViewModifier {
+    @Environment(\.presentationMode) var presentationMode
     var titleBar: String
+    var isArrowBack: Bool = false
+    
     func body(content: Content) -> some View {
     content
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .principal) {
+            ToolbarItem(placement: .navigationBarLeading) {
                 HStack {
+                    if isArrowBack {
+                        Button(action: {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }) {
+                            HStack{
+                                Image(systemName: "arrow.backward")
+                                    .font(.system(size: isIpad() ? 30 : 18 ,weight: .regular, design: .rounded))
+                                    .foregroundColor(.white)
+                            }.foregroundColor(.white)
+                        }
+                    }
+                    
                     Text(titleBar)
                         .fontWeight(.heavy)
                         .font(.system(size: isIpad() ? 25 : 16))
                         .foregroundColor(.white)
                         .modifier(CustomShadowModifier())
+                    
+                    Spacer()
                 }
             }
         }
@@ -46,8 +63,7 @@ struct TabSelecterModifier : ViewModifier {
         .font(.system(size: isIpad() ? 25 : 16 ,weight: .regular, design: .rounded))
         .padding(.vertical,10)
         .padding(.horizontal,35)
-        .background(kTopBarBg.opacity(isActive ? 1 : 0))
-        .clipShape(Capsule())
+        
     }
 }
 

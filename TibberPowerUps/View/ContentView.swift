@@ -20,26 +20,22 @@ struct ContentView: View {
                 VStack{
                     // MARK: - Tab Selection
                     HStack(spacing: 0){
-                        Text("Connected")
-                            .modifier(TabSelecterModifier(isActive: self.index == 0))
+                        TabSlidePreview(title: "Connected", isActive: .constant(self.index == 0))
                             .onTapGesture {
                                 withAnimation(.default){
                                     self.index = 0
                                 }
                             }
-                        
-                        Text("Disconnected")
-                            .modifier(TabSelecterModifier(isActive: self.index == 1))
-                            .onTapGesture {
-                                withAnimation(.default){
-                                    self.index = 1
-                                }
+                        TabSlidePreview(title: "Disconnect", isActive: .constant(self.index == 1))
+                        .onTapGesture {
+                            withAnimation(.default){
+                                self.index = 1
                             }
+                        }
                     }//:HStack
-                    .frame(width: isIpad() ? getScreen().width * 0.5 : getScreen().width * 0.98)
+                    .frame(width: isIpad() ? getScreen().width * 0.7 : getScreen().width * 0.98)
                     .background(Color.black.opacity(0.03))
                     .clipShape(Capsule())
-                    .padding(.horizontal)
                     .padding(.bottom,25)
                     
                     // MARK: - Preview Selection
@@ -63,6 +59,20 @@ struct ContentView: View {
     }
 }
 
+struct TabSlidePreview: View {
+    @State var title: String
+    @Binding var isActive: Bool
+    
+    var body: some View {
+        VStack{
+        Text(title)
+            .modifier(TabSelecterModifier(isActive: isActive))
+        }
+        .frame(width: isIpad() ? getScreen().width * 0.35 : getScreen().width * 0.49)
+        .background(kTopBarBg.opacity(isActive ? 1 : 0))
+        .clipShape(Capsule())
+    }
+}
  
 struct PowerUpItemPreveiw: View {
     @EnvironmentObject var powerUpVM: PowerUpsVM
