@@ -25,7 +25,7 @@ struct ButtonActionView: View {
                 .background(isActive ? kTopBarBg : kTopBarBg.opacity(0.1))
                 .cornerRadius(20)
                 .overlay(RoundedRectangle(cornerRadius: 20)
-                .stroke(isActive ? kTopBarBg : kBorderColor, lineWidth: 2))
+                .stroke(isActive ? kTopBarBg : kBorderColor, lineWidth: 1))
                 //.shadow(radius: 2)
         }).padding(3)
     }
