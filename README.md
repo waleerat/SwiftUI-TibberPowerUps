@@ -1,4 +1,7 @@
 # TibberPowerUps
+Fetch API with Alpollo
+
+## Key Technology : SwiftUI, GraphQL, Apollo
 
  
 <img src="https://github.com/waleerat/GitHub-Photos-Shared/blob/main/Tibber/loading.png" width="20%" height="20%"> |
